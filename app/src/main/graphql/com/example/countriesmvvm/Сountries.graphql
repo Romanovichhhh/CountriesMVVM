@@ -1,0 +1,47 @@
+query Continent ($code: ID!) {
+    continent(code: $code) {
+        code
+        name
+        countries {
+            code
+            name
+        }
+    }
+}
+
+query Continents($filter: ContinentFilterInput) {
+    continents(filter: $filter) {
+        code
+        name
+        countries {
+            code
+            name
+        }
+    }
+}
+
+query Country($code: ID!) {
+    country(code: $code) {
+        code
+        name
+        native
+        phone
+        continent {
+            name
+        }
+        capital
+        currency
+        languages {
+            code
+            name
+            native
+            rtl
+        }
+        emoji
+        emojiU
+        states {
+            code
+            name
+        }
+    }
+}

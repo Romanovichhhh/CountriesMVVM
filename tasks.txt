@@ -1,0 +1,22 @@
+1.Setup GraphQl +
+2.Setup Hilt +
+3.Setup graphql files +
+4.Setup repositories +
+5.Setup usecases +
+6.Setup ui
+7.Setup viewModels
+8.Setup data providing 
+9.Setup Room
+10.Setup room repository
+11.Change repository methods
+12.You're great!
+
+При первом входе загружается список континетов и список его стран
+Эти данные загружаются в бд и в дальнейшем проверяется их наличие из бд
+При клике на страну загружеается информация о ней с сервера
+
+Links:
+https://trevorblades.github.io/countries/queries/country
+https://github.com/trevorblades/countries
+https://github.com/HamdiBoumaiza/ApolloRickAndMorty
+https://developer.android.com/training/data-storage/room/referencing-data
