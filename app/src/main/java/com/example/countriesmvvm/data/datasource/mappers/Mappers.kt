@@ -37,6 +37,6 @@ fun CountryQuery.Data.mapToDomainModel(): Country {
             "${it.name ?: ""}(${it.native ?: ""})"
         } ?: emptyList(),
         states = country?.states?.map { it.name } ?: emptyList(),
-        emoji = country?.emojiU?.replace("U+","0x")?.toIntOrNull()
+        emoji = country?.emoji
     )
 }

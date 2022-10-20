@@ -1,7 +1,6 @@
 package com.example.countriesmvvm.presentation.country
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -14,8 +13,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class CountryActivity : AppCompatActivity() {
 
-    private val viewModel : CountryViewModel by viewModels()
-    private lateinit var binding : ActivityCountryBinding
+    private val viewModel: CountryViewModel by viewModels()
+    private lateinit var binding: ActivityCountryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +43,9 @@ class CountryActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupViews(country : Country) {
+    private fun setupViews(country: Country) {
         with(binding) {
+            countryEmoji.text = country.emoji
             countryName.setValueString(country.name)
             countryNative.setValueString(country.native)
             countryPhone.setValueString(country.phone)
@@ -53,6 +53,7 @@ class CountryActivity : AppCompatActivity() {
             countryContinent.setValueString(country.continentName)
             countryLanguages.setItems(country.languages)
             countryStates.setItems(country.states)
+
         }
     }
 

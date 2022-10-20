@@ -12,10 +12,10 @@ object GraphQLClient {
     private fun apolloClient(): ApolloClient =
         ApolloClient.Builder().serverUrl(BASE_URL).build()
 
-    fun getContinents() : ApolloCall<ContinentsQuery.Data> =
+    fun getContinents(): ApolloCall<ContinentsQuery.Data> =
         apolloClient().query(ContinentsQuery())
 
-    fun getContinent(code : String) =
+    fun getContinent(code: String) =
         apolloClient().query(ContinentQuery(code))
 
     fun getCountry(continentCode: String) =

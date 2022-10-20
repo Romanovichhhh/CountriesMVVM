@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.countriesmvvm.databinding.ViewCountryHeaderBinding
 
 class CountryHeaderAdapter(
-    private val list : List<String>
+    private val list: List<String>
 ) : RecyclerView.Adapter<CountryHeaderAdapter.CountryHeaderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryHeaderAdapter.CountryHeaderViewHolder =
@@ -19,15 +19,19 @@ class CountryHeaderAdapter(
             )
         )
 
-    override fun onBindViewHolder(holder: CountryHeaderAdapter.CountryHeaderViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: CountryHeaderAdapter.CountryHeaderViewHolder,
+        position: Int
+    ) {
         holder.bind(list[position])
     }
 
     override fun getItemCount() = list.size
 
-    inner class CountryHeaderViewHolder(private val view : ViewCountryHeaderBinding) : RecyclerView.ViewHolder(view.root) {
+    inner class CountryHeaderViewHolder(private val view: ViewCountryHeaderBinding) :
+        RecyclerView.ViewHolder(view.root) {
 
-        fun bind(data : String) {
+        fun bind(data: String) {
             with(view) {
                 countryHeaderArrow.isVisible = false
                 countryHeaderArrow.isVisible = false

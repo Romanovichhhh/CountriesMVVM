@@ -1,6 +1,5 @@
 package com.example.countriesmvvm.data.datasource.repository
 
-import android.util.Log
 import com.example.countriesmvvm.R
 import com.example.countriesmvvm.data.common.ClientResult
 import com.example.countriesmvvm.data.common.DataSourceException
@@ -17,7 +16,7 @@ import kotlinx.coroutines.flow.onStart
 
 class CountryRepositoryImpl(
     private val apolloClient: RemoteDataSource,
-    private val appDao : AppDao
+    private val appDao: AppDao
 ) : IContriesRepository {
 
     override suspend fun getContinents(): Flow<ClientResult<List<Continent>>> =
@@ -35,8 +34,7 @@ class CountryRepositoryImpl(
                     val localResults = appDao.getContinentsList()
                     if (localResults.isNotEmpty()) {
                         emit(ClientResult.Success(localResults))
-                    }
-                    else {
+                    } else {
                         emit(ClientResult.Error(result.exception))
                     }
                 }

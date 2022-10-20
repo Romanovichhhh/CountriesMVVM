@@ -3,7 +3,8 @@ package com.example.countriesmvvm.presentation.country
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.countriesmvvm.data.common.*
+import com.example.countriesmvvm.data.common.ClientResult
+import com.example.countriesmvvm.data.common.DataSourceException
 import com.example.countriesmvvm.domain.models.Country
 import com.example.countriesmvvm.domain.usecases.GetCountryUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

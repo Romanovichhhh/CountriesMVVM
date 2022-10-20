@@ -10,9 +10,9 @@ import com.example.countriesmvvm.domain.models.Continent
 interface AppDao {
 
     @Query("SELECT * FROM continents")
-    suspend fun getContinentsList() : List<Continent>
+    suspend fun getContinentsList(): List<Continent>
 
     @Insert(onConflict = REPLACE)
-    suspend fun saveContinentsList(list : List<Continent>)
+    suspend fun saveContinentsList(list: List<Continent>)
 
 }

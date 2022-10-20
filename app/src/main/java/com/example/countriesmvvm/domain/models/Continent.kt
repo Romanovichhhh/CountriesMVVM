@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = "continents", primaryKeys = ["code"])
 @Parcelize
 data class Continent(
-    val code : String,
-    val name : String,
-    val countries : List<Pair<String, String>>
+    val code: String,
+    val name: String,
+    val countries: List<Pair<String, String>>
 ) : Parcelable

@@ -7,6 +7,6 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface IContriesRepository {
-    suspend fun getContinents() : Flow<ClientResult<List<Continent>>>
-    suspend fun getCountry(countryCode : String) : ClientResult<Country?>
+    suspend fun getContinents(): Flow<ClientResult<List<Continent>>>
+    suspend fun getCountry(countryCode: String): ClientResult<Country?>
 }

@@ -43,8 +43,7 @@ class ContinentsAdapter(
                     continentCountriesRecycler.isVisible = !continentCountriesRecycler.isVisible
                     if (continentCountriesRecycler.isVisible) {
                         continentExpandButton.setBackgroundResource((R.drawable.icon_expand_less))
-                    }
-                    else {
+                    } else {
                         continentExpandButton.setBackgroundResource(R.drawable.icon_expand_more)
                     }
                 }

@@ -1,9 +1,9 @@
 package com.example.countriesmvvm.presentation.continents
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.countriesmvvm.databinding.ActivtyContinentsBinding
 import com.example.countriesmvvm.domain.models.Continent
@@ -15,8 +15,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ContinentsActivity : AppCompatActivity() {
 
-    private val viewModel : ContinentsViewModel by viewModels()
-    private lateinit var binding : ActivtyContinentsBinding
+    private val viewModel: ContinentsViewModel by viewModels()
+    private lateinit var binding: ActivtyContinentsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,9 +46,9 @@ class ContinentsActivity : AppCompatActivity() {
         }
     }
 
-    private fun setContinentsList(list : List<Continent>) {
+    private fun setContinentsList(list: List<Continent>) {
         with(binding.activityContinentsRecycler) {
-            adapter = ContinentsAdapter(list) {goToCountry(it)}
+            adapter = ContinentsAdapter(list) { goToCountry(it) }
         }
     }
 

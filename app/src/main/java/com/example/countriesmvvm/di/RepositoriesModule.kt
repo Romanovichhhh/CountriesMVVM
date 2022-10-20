@@ -16,7 +16,7 @@ object RepositoriesModule {
 
     @Provides
     @Singleton
-    fun provideCountriesRepository(appDao: AppDao) : IContriesRepository {
+    fun provideCountriesRepository(appDao: AppDao): IContriesRepository {
         return CountryRepositoryImpl(RemoteDataSourceImpl(), appDao)
     }
 }

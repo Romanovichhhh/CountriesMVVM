@@ -11,12 +11,12 @@
     </data>
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
             <LinearLayout
@@ -26,13 +26,23 @@
                 android:orientation="vertical"
                 tools:context=".presentation.country.CountryActivity">
 
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/country_emoji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/black"
+                    tools:text = "F"/>
+
                 <com.example.countriesmvvm.presentation.customview.CountryHeaderView
                     android:id="@+id/country_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
-                    app:key="Name"
-                    app:value="апваеглапрол" />
+                    app:key="Name"/>
 
                 <com.example.countriesmvvm.presentation.customview.CountryHeaderView
                     android:id="@+id/country_native"
@@ -54,6 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
                     app:key="Capital" />
+
 
                 <com.example.countriesmvvm.presentation.customview.CountryHeaderView
                     android:id="@+id/country_continent"
