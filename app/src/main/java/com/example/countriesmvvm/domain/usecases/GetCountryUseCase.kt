@@ -8,7 +8,6 @@ import javax.inject.Inject
 class GetCountryUseCase @Inject constructor(
     private val countriesRepository: IContriesRepository
 ) : UseCase<String, Country?>() {
-
     override suspend fun call(param: String): ClientResult<Country?> {
         return countriesRepository.getCountry(param)
     }

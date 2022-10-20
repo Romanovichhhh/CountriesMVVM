@@ -8,11 +8,8 @@ data class Country(
     val continentName : String,
     val capital : String,
     val currency : String,
-    val languages : List<Language>,
-    val states : List<String>
+    val languages : List<String>,
+    val states : List<String>,
+    val emoji : Int?
     )
 
-data class Language(
-    val name : String,
-    val native : String
-)

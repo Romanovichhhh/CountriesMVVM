@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
     id 'com.google.dagger.hilt.android'
     id 'com.apollographql.apollo3'
 }
@@ -32,11 +33,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
-
-    def apollo = "3.6.2"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
@@ -47,11 +51,22 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //Dagger - Hilt
-    implementation "com.google.dagger:hilt-android:2.40.5"
-    annotationProcessor "com.google.dagger:hilt-android-compiler:2.40.5"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
-    annotationProcessor "androidx.hilt:hilt-compiler:1.0.0"
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+    implementation 'com.google.dagger:dagger:2.44'
+    kapt("com.google.dagger:dagger-compiler:2.44")
+
+    implementation "androidx.navigation:navigation-compose:2.5.2"
+
+    //Room
+    implementation "androidx.room:room-runtime:2.4.3"
+    implementation "androidx.room:room-ktx:2.4.3"
+    kapt("androidx.room:room-compiler:2.4.3")
+
+    //Gson
+    implementation "com.google.code.gson:gson:2.8.9"
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -67,4 +82,8 @@ dependencies {
 apollo {
     packageName.set("com.example.countriesmvvm")
     generateKotlinModels.set(true)
+}
+
+kapt {
+    correctErrorTypes = true
 }

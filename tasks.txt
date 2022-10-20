@@ -3,20 +3,37 @@
 3.Setup graphql files +
 4.Setup repositories +
 5.Setup usecases +
-6.Setup ui
-7.Setup viewModels
-8.Setup data providing 
+6.Setup ui +
+7.Setup viewModels +
+8.Setup data providing +
+8.5 Setup emoji displaying
 9.Setup Room
 10.Setup room repository
 11.Change repository methods
 12.You're great!
 
+
 При первом входе загружается список континетов и список его стран
 Эти данные загружаются в бд и в дальнейшем проверяется их наличие из бд
 При клике на страну загружеается информация о ней с сервера
+
+Stack: 
+LiveData
+ViewModel
+MVVM
+Flow
+Coroutines
+Clean Architeture
+Hilt
+Apollo
+ViewBinding
+DataBinding
+CustomView
+Room*
 
 Links:
 https://trevorblades.github.io/countries/queries/country
 https://github.com/trevorblades/countries
 https://github.com/HamdiBoumaiza/ApolloRickAndMorty
 https://developer.android.com/training/data-storage/room/referencing-data
+https://stackoverflow.com/questions/26893796/how-to-set-emoji-by-unicode-in-a-textview

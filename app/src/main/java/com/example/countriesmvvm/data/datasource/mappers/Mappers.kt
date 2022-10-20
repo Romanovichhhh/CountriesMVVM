@@ -5,7 +5,6 @@ import com.example.countriesmvvm.ContinentsQuery
 import com.example.countriesmvvm.CountryQuery
 import com.example.countriesmvvm.domain.models.Continent
 import com.example.countriesmvvm.domain.models.Country
-import com.example.countriesmvvm.domain.models.Language
 
 fun ContinentsQuery.Data.mapToDomainModel(): List<Continent> {
     return this.continents.map { continent ->
@@ -30,13 +29,14 @@ fun CountryQuery.Data.mapToDomainModel(): Country {
         code = country?.code ?: "",
         name = country?.name ?: "",
         native = country?.native ?: "",
-        phone = country?.phone ?: "",
+        phone = "+${country?.phone}" ?: "",
         continentName = country?.continent?.name ?: "",
         capital = country?.capital ?: "",
         currency = country?.currency ?: "",
         languages = country?.languages?.map {
-            Language(it.name ?: "", it.native ?: "")
+            "${it.name ?: ""}(${it.native ?: ""})"
         } ?: emptyList(),
-        states = country?.states?.map { it.name } ?: emptyList()
+        states = country?.states?.map { it.name } ?: emptyList(),
+        emoji = country?.emojiU?.replace("U+","0x")?.toIntOrNull()
     )
 }
