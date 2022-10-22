@@ -16,14 +16,6 @@ fun ContinentsQuery.Data.mapToDomainModel(): List<Continent> {
     }
 }
 
-fun ContinentQuery.Data.mapToDomainModel(): Continent {
-    return Continent(
-        code = continent?.code ?: "",
-        name = continent?.name ?: "",
-        countries = continent?.countries?.map { Pair(it.code, it.name) } ?: emptyList()
-    )
-}
-
 fun CountryQuery.Data.mapToDomainModel(): Country {
     return Country(
         code = country?.code ?: "",
